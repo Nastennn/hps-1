@@ -1,0 +1,14 @@
+version: "3"
+services:
+  quicksort:
+    build: .
+    entrypoint: /bin/bash
+    command: -c "gcc -fopenmp common.h common.c quicksort.c -o quicksort && ./quicksort"
+    volumes:
+      - ./:/app
+  timsort:
+    build: .
+    entrypoint: /bin/bash
+    command: -c "gcc -fopenmp common.h common.c timsort.c -o timsort && ./timsort"
+    volumes:
+      - ./:/app
